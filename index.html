@@ -3,86 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tải ứng dụng</title>
+<title>Quỹ Căn – Tải ứng dụng</title>
 <style>
+  * { box-sizing: border-box; }
+
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #ffffff;
-    color: #000;
+    /* Nửa trên cam, nửa dưới trắng */
+    min-height: 100vh;
+    background: linear-gradient(
+      to bottom,
+      #ff825d 0%,
+      #ff825d 50%,
+      #f5f5f5 50%,
+      #f5f5f5 100%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  .container {
+
+  .card-wrapper {
+    position: relative;
+    width: 100%;
     max-width: 480px;
-    margin: 0 auto;
-    padding: 36px 20px;
+    padding: 0 20px;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px 32px 32px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
     text-align: center;
   }
-  .logo {
-    width: 120px;
-    height: 120px;
+
+  .app-logo {
+    width: 90px;
+    height: 90px;
     border-radius: 24px;
+    background: #f4f4f4;
     object-fit: cover;
-    display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   }
-  h1 {
-    font-size: 26px;
-    margin: 0 0 12px;
-    font-weight: 700;
-  }
-  p {
-    font-size: 16px;
-    margin: 0 0 28px;
-    color: #444;
-  }
-  a.store-btn {
-    display: block;
-    padding: 14px 18px;
-    margin: 0 auto 16px;
-    width: 85%;
-    max-width: 360px;
-    border-radius: 12px;
+
+  .app-name {
+    font-size: 20px;
     font-weight: 600;
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
+    margin-bottom: 20px;
+    color: #222;
   }
-  .android { background: #3DDC84; color: #000; }
-  .ios { background: #000; }
+
+  .store-links a {
+    display: block;
+    margin: 8px auto;
+    width: 220px;
+    max-width: 100%;
+    text-decoration: none;
+  }
+
+  .store-links img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer {
+    margin-top: 32px;
+    font-size: 13px;
+    color: #aaa;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      padding: 32px 20px 24px;
+    }
+    .store-links a {
+      width: 200px;
+    }
+  }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="card-wrapper">
+  <div class="card">
 
-  <!-- Logo -->
-  <img src="https://via.placeholder.com/200" class="logo">
+    <!-- 2. LOGO APP: thay src bằng link logo của bạn -->
+    <img
+      src="logo.png"
+      alt="Logo Quỹ Căn"
+      class="app-logo"
+    >
 
-  <!-- Tiêu đề -->
-  <h1>Tải ứng dụng</h1>
+    <div class="app-name">Quỹ Căn</div>
 
-  <!-- Mô tả -->
-  <p>Nhấn vào cửa hàng phù hợp với thiết bị của bạn</p>
+    <div class="store-links">
+      <!-- App Store badge (đen như ảnh) -->
+      <a
+        href="https://apps.apple.com/app/id6753736057"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store/download-on-the-app-store-black.svg"
+          alt="Download on the App Store"
+        >
+      </a>
 
-  <!-- Button Android -->
-  <a
-    class="store-btn android"
-    href="https://play.google.com/store/apps/details?id=com.quycan.app"
-    target="_blank"
-    rel="noopener noreferrer">
-    Tải trên Google Play
-  </a>
-
-  <!-- Button iOS -->
-  <a
-    class="store-btn ios"
-    href="https://apps.apple.com/app/id6753736057"
-    target="_blank"
-    rel="noopener noreferrer">
-    Tải trên App Store
-  </a>
-
+      <!-- Google Play badge (đen như ảnh) -->
+      <a
+        href="https://play.google.com/store/apps/details?id=com.quycan.app"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+          alt="Get it on Google Play"
+        >
+      </a>
+    </div>
+  </div>
 </div>
+
+<div class="footer">quycan.com</div>
 
 </body>
 </html>
